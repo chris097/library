@@ -2,7 +2,7 @@ import React  from "react";
 
 export const Sidebar = () => {
     return(
-        <div className="dark:bg-gray-800 transition duration-500 bg-white shadow-lg h-screen md:w-64 md:fixed md:block font-rubik md:visible hidden">
+        <div className="dark:bg-gray-900 transition duration-500 bg-white shadow-lg h-screen md:w-64 md:fixed md:block font-rubik md:visible hidden mt-36">
             <div className="overflow-y-auto h-3/4 scrollbar scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400 hover:scrollbar-thumb-gray-600">
                 <div className="mt-2 px-10 dark:text-gray-300">
                     A curated list of every book ever written

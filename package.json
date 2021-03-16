@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "tailwindcss build src/styles.css -o public/tailwind.css",
-    "json:server": "json-server --watch src/Components/data/db.json --port 3004"
+    "json:server": "json-server --watch src/database/db.json --port 3004"
   },
   "eslintConfig": {
     "extends": [

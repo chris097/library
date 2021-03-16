@@ -5,6 +5,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.card{
-    @apply dark:bg-gray-700 bg-white shadow-lg w-40 md:w-52 h-80 rounded-lg md:mr-6 mb-5 md:mx-0 mx-4
+/* Below are styling coming from cards.js file */
+
+.cards-container{
+    @apply flex flex-wrap md:ml-64 -ml-3 md:px-6 md:p-0 pl-4 md:mt-36;
 }
+
+.cards{
+    @apply md:w-52 md:h-80 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 mt-40 rounded-lg cursor-pointer;
+}
+
+.cards-img{
+    @apply w-full h-full bg-gray-100 dark:bg-gray-700 rounded-lg bg-no-repeat bg-center bg-cover p-3;
+}
+

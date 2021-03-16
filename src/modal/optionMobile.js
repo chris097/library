@@ -6,7 +6,7 @@ export const DarkModeMobile = () => {
     const [colortheme, setColorTheme] = useDarkMode()
 
     return(
-        <div className="dark:bg-gray-800 bg-white shadow-xl w-auto h-14 md:invisible visible fixed right-56 mt-12 p-2">
+        <div className="bg-white dark:bg-gray-900 shadow-xl w-auto h-14 md:invisible visible fixed right-4 mt-12 p-2">
             <div className="flex">
                 <div className="dark:bg-gray-600 dark:text-gray-300 flex bg-white w-28 mr-10 rounded-full px-2 h-9">
                     <img className="w-6" src={filterIcon} alt=""/>

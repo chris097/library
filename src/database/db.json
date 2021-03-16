@@ -1,0 +1,31 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Emotional Intelligent",
+      "author": "Christian Paul",
+      "bookUrl": "https://www.hello-world.com",
+      "isPublished": 2000,
+      "imageUrl": "https://www.helloworld.com",
+      "description": "hello world it has coding overnight welcome to the world sleepless night"
+    },
+    {
+      "id": 2,
+      "title": "Love Syndrome",
+      "author": "Gideon Ukaegbu",
+      "isPublished": 1994,
+      "imageUrl": "",
+      "description": "hello world coding is all about patient, persistent, resitening, focusing, and learning daily especially achieving bit by bit daily"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

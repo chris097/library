@@ -61,31 +61,33 @@ export const Skeleton = () => {
 
             {/** Cards container */}
 
-            <div class="md:mx-72 mt-44 md:w-3/4 rounded-full flex fixed flex-wrap justify-items-start animate-pulse">
-                <div class="card">
-                    <div class="bg-gray-200 w-full h-52 rounded-tr-lg rounded-tl-lg"></div>
-                    <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
-                    <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
-                </div>
-                <div class="card">
-                    <div class="bg-gray-200 w-full h-52 rounded-tr-lg rounded-tl-lg"></div>
-                    <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
-                    <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
-                </div>
-                <div class="card">
-                    <div class="bg-gray-200 w-full h-52 rounded-tr-lg rounded-tl-lg"></div>
-                    <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
-                    <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
-                </div>
-                <div class="card">
-                    <div class="bg-gray-200 w-full h-52 rounded-tr-lg rounded-tl-lg"></div>
-                    <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
-                    <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
-                </div>
-                <div class="card">
-                    <div class="bg-gray-200 w-full h-52 rounded-tr-lg rounded-tl-lg"></div>
-                    <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
-                    <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
+            <div class="h-screen overflow-hidden">
+                <div class="cards-container mt-40">
+                    <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 rounded-lg">
+                        <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
+                        <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
+                        <div class="bg-gray-200  h-3 mt-3 ml-3 rounded-full"></div> 
+                    </div>
+                    <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 rounded-lg">
+                        <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
+                        <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
+                        <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
+                    </div>
+                    <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 mt-4 rounded-lg">
+                        <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
+                        <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
+                        <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
+                    </div>
+                    <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 mt-4 rounded-lg">
+                        <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
+                        <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
+                        <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
+                    </div>
+                    <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 mt-4 rounded-lg">
+                        <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
+                        <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
+                        <div class="bg-gray-200 w-1/2 h-3 mt-3 ml-3 rounded-full"></div> 
+                    </div>
                 </div>
             </div>
         </>
