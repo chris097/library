@@ -10,7 +10,7 @@ export const Cards = ({ books }) => {
                 { books.map(book => (
                     <div class="cards">
                         <div>
-                            <img class="cards-img" src={book.imageUrl !== "" ? book.imageUrl : loveIcon} alt="book_image"/>
+                            <img class="cards-img" src={book.imageUrl !== [] ? book.imageUrl : loveIcon} alt="book_image"/>
                             <div class="md:ml-3 ml-1.5 mt-2 md:mt-4 font-rubik">
                                 <h3 class="font-bold md:text-lg text-sm">{book.title}</h3>
                                 <p class="font-lobster md:text-lg text-sm -mt-1">{book.author}</p>
