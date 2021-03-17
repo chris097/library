@@ -16,6 +16,6 @@
 }
 
 .cards-img{
-    @apply w-full h-44 bg-gray-100 dark:bg-gray-700 rounded-lg bg-no-repeat bg-center bg-cover p-3;
+    @apply w-full md:h-44 h-36 bg-gray-100 dark:bg-gray-700 rounded-lg bg-no-repeat bg-center bg-cover p-3;
 }
 

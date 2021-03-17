@@ -3,7 +3,7 @@ import { React } from "react";
 
 export const Header = () => {
     return(
-        <div class=" dark:bg-gray-900 dark:text-gray-400 bg-white shadow-sm h-20 flex justify-between md:px-10 px-2 py-4 overflow-hidden w-full fixed left-0 z-30">
+        <div class=" dark:bg-gray-900 dark:text-gray-400 bg-white shadow-sm h-20 flex justify-between md:px-10 px-2 py-4 overflow-hidden w-full fixed left-0 z-20">
             <div class="flex flex-1">
                 { /**Logo */}
                 <div class="text-2xl font-lobster mt-2">BookCabinet</div>
