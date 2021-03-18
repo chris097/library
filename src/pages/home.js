@@ -6,12 +6,14 @@ import { Header } from '../components/header';
 import { Sidebar } from '../components/sidebar';
 import { MobileSidebar } from '../components/sidebarMobile';
 import { SubHeader } from '../components/subHeader';
+import { PostData } from '../modal/postData';
 
 
 export const Home = () => {
     const [ mobSidebar, setMobSidebar ] = useState(false);
     const [showSidebar, setShowSidebar ] = useState(true);
     const [ card, setCard ] = useState([]);
+    const [ postData, setPostData ] = useState('')
 
     /** Fetching data from th RestApi using Get all method. */
     useEffect(() => {
@@ -29,13 +31,20 @@ export const Home = () => {
         setMobSidebar(!mobSidebar)
         setShowSidebar(!showSidebar)
     }
+
+    // Fuction to display post data form input
+    const displayData = () => {
+        console.log('something was clicked ...')
+        setPostData(<PostData />)
+    }
     return(
         <>
-        <Header />
+        <Header displayData={displayData} />
         <SubHeader card={card} getSidebarMobile={getSidebarMobile} />
         {!showSidebar ? <MobileSidebar /> : showSidebar}
         <Sidebar />
         { card }
+        { postData }
         </>
     )
 }

@@ -19,3 +19,6 @@
     @apply w-full md:h-44 h-36 bg-gray-100 dark:bg-gray-700 rounded-lg bg-no-repeat bg-center bg-cover p-3;
 }
 
+.input-box{
+    @apply w-full border border-gray-200 p-1 rounded-sm outline-none placeholder-gray-300 dark:bg-gray-600 dark:border-gray-500
+}

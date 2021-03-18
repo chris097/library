@@ -1,12 +1,12 @@
 import { React } from "react";
 
 
-export const Header = () => {
+export const Header = ({displayData}) => {
     return(
         <div class=" dark:bg-gray-900 dark:text-gray-400 bg-white shadow-sm h-20 flex justify-between md:px-10 px-2 py-4 overflow-hidden w-full fixed left-0 z-20">
             <div class="flex flex-1">
                 { /**Logo */}
-                <div class="text-2xl font-lobster mt-2">BookCabinet</div>
+                <div class="text-2xl font-lobster mt-2 cursor-pointer"><a href="/">BookCabinet</a></div>
 
                 { /** Search Input */}
 
@@ -20,7 +20,7 @@ export const Header = () => {
             </div>
 
             { /** Add book button */}
-            <div class="">
+            <div onClick={displayData}>
                 <button class="dark:text-gray-400 dark:bg-gray-700 absolute right-8 flex w-40 invisible md:visible bg-primaryColor rounded-full outline-none py-3 px-5 hover:bg-blue-400 transition-all ease-in-out">
                 <span>
                 <svg class="w-6 text-white dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,7 +31,7 @@ export const Header = () => {
                 </button>
 
                  { /* Mobile add button */}
-                 <button className="dark:bg-gray-700 flex absolute right-3 w-auto md:invisible bg-primaryColor rounded outline-none py-1 px-1 mt-2 hover:bg-blue-400 transition-all ease-in-out">
+                 <button onClick={displayData} className="dark:bg-gray-700 flex absolute right-3 w-auto md:invisible bg-primaryColor rounded outline-none py-1 px-1 mt-2 hover:bg-blue-400 transition-all ease-in-out">
                  <span className="">
                  <svg className="w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />

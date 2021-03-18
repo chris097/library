@@ -7,7 +7,7 @@ export const Skeleton = () => {
             { /** Header */ }
 
             <div class="md:px-10 px-6 bg-white shadow-sm fixed flex self-stretch h-20 py-4 w-full animate-pulse top-0 left-0 z-20">
-                <div class="text-2xl pt-2 font-lobster text-gray-400">LiberShelter</div>
+                <div class="text-2xl pt-2 font-lobster text-gray-400">BookCabinet</div>
                     
                 <div class="md:w-4/5 bg-gray-50 md:mx-20 rounded-full px-4 md:visible invisible">
                     <span><svg class="w-6 inline text-gray-200 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,7 @@ export const Skeleton = () => {
                     <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 rounded-lg">
                         <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
                         <div class="bg-gray-200 w-3/4 h-4 mt-3 ml-3 rounded-full"></div>
-                        <div class="bg-gray-200  h-3 mt-3 ml-3 rounded-full"></div> 
+                        <div class="bg-gray-200 w-1/2  h-3 mt-3 ml-3 rounded-full"></div> 
                     </div>
                     <div class="md:w-52 md:h-72 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 rounded-lg">
                         <div class="bg-gray-200 w-full h-44 rounded-tr-lg rounded-tl-lg"></div>
