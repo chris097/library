@@ -76,7 +76,7 @@ export const Cards = ({ books }) => {
     }
     
     return( 
-       <div class="h-screen dark:text-gray-400 pb-6 overflow-auto">
+       <div class="h-screen w-full dark:bg-gray-900 dark:text-gray-400 pb-6 overflow-auto">
             <div class="cards-container">
                 { books.map(book => (
                     <div class="cards" key={book.id}>
