@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import loveIcon from "../icons/love-icon.svg";
 import commentIcon from "../icons/comment-icon.svg";
 import axios from "axios";
-import { Url } from "../routes/localhost";
+import {prodUrl} from '../routes/prod'
 import { GetBookById } from "../modal/getData";
 import { GetDataLoading } from "../loading/getData";
 
@@ -14,8 +14,8 @@ export const Cards = ({ books }) => {
     const [ likes, setLikes ] = useState(0)
     localStorage.getItem(likes)
 
-    const getBook = (id) => {
-        axios.get(`${Url}/${id}`)
+    const getBook = (_id) => {
+        axios.get(`${prodUrl}/${_id}`)
         .then(res => {
             let book = res.data
             // console.log(book)
@@ -25,7 +25,7 @@ export const Cards = ({ books }) => {
                 setLoading('')
                 setGetBookById(
                     <GetBookById 
-                    id={book.id}
+                    _id={book._id}
                     author={book.author} 
                     title={book.title}
                     imageUrl={book.imageUrl}
@@ -54,11 +54,11 @@ export const Cards = ({ books }) => {
     }
 
     // This function will be deletng a book permaniently be careful on clicking this function
-    const deleteData = (id) => {
-        window.location.reload(false)
-        axios.delete(`${Url}/${id}`)
+    const deleteData = (_id) => {
+        axios.delete(`${prodUrl}/${_id}`)
         .then(res => {
             const deteleData = res.data;
+            window.location.reload(false)
             console.log(deteleData)
         })
         setGetBookById('')
@@ -76,19 +76,19 @@ export const Cards = ({ books }) => {
     }
     
     return( 
-       <div class="h-screen dark:text-gray-400 pb-6 overflow-auto">
+       <div class="h-screen w-full dark:bg-gray-900 dark:text-gray-400 pb-6 overflow-auto">
             <div class="cards-container">
                 { books.map(book => (
                     <div class="cards" key={book.id}>
                         <div>
-                            <img class="cards-img" src={book.imageUrl !== "" ? book.imageUrl : loveIcon} alt="book_image" onClick={() => getBook(book.id)}/>
+                            <img class="cards-img" src={book.imageUrl !== "" ? book.imageUrl : loveIcon} alt="book_image" onClick={() => getBook(book._id)}/>
                             <div class="md:ml-3 ml-1.5 mt-2 md:mt-4 font-rubik">
-                                <div onClick={() => getBook(book.id)}>
+                                <div onClick={() => getBook(book._id)}>
                                     <h3 class="font-bold md:text-lg text-sm">{book.title}</h3>
                                     <p class="font-lobster md:text-lg text-sm -mt-1">{book.author}</p>
                                 </div>
                                 <div class="flex mt-4">
-                                    <div class="flex" onClick={() => getBook(book.id)}>
+                                    <div class="flex" onClick={() => getBook(book._id)}>
                                         <img src={loveIcon} alt="likes_icon"/>
                                         <span class="text-gray-400 ml-1 -mt-1">{likes}</span>
                                     </div>

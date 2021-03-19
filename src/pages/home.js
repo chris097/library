@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Url} from "../routes/localhost"
+import {prodUrl} from "../routes/prod"
 import { Cards } from '../components/cards';
 import { Header } from '../components/header';
 import { Sidebar } from '../components/sidebar';
@@ -20,7 +20,7 @@ export const Home = () => {
 
     /** Fetching data from th RestApi using Get all method. */
     useEffect(() => {
-        axios.get(Url)
+        axios.get(prodUrl)
         .then(res => {
             const books = res.data;
             setLenght(books.length)
