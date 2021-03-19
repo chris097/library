@@ -8,30 +8,60 @@ import { GetBookById } from "../modal/getData";
 import { GetDataLoading } from "../loading/getData";
 
 export const Cards = ({ books }) => {
+    
     const [ getBookById, setGetBookById ] = useState('')
-    const [ loading, setLoading ] = useState('')
+    const [ loading, setLoading ] = useState('');
+    const [ likes, setLikes ] = useState(0)
+    localStorage.getItem(likes)
 
     const getBook = (id) => {
         axios.get(`${Url}/${id}`)
         .then(res => {
             let book = res.data
-            console.log(book)
+            // console.log(book)
             setLoading(<GetDataLoading />)
 
             setTimeout(() => {
                 setLoading('')
                 setGetBookById(
                     <GetBookById 
+                    id={book.id}
                     author={book.author} 
                     title={book.title}
                     imageUrl={book.imageUrl}
                     bookUrl={book.bookUrl}
                     description={book.description}
                     isPublished={book.isPublished}
-                    removeBookId={removeBookId} />)
+                    removeBookId={removeBookId} 
+                    deleteData={deleteData}
+                    updateData={updateData}
+                    updateLike={updateLike} />)
             }, 1000);
         })
         .catch(err => console.log(err.message))
+    }
+
+    // This function will be updating data ie if you want to edit a book data
+    const updateData = () => {
+        console.log('update button was clicked ...')
+    }
+
+    // This function updates likes
+    const updateLike = () => {
+        // console.log('like was clicked ...')
+        localStorage.setItem('likes', !likes ? likes +1 : likes -1 )
+        setLikes( !likes ? likes +1 : likes -1 )
+    }
+
+    // This function will be deletng a book permaniently be careful on clicking this function
+    const deleteData = (id) => {
+        window.location.reload(false)
+        axios.delete(`${Url}/${id}`)
+        .then(res => {
+            const deteleData = res.data;
+            console.log(deteleData)
+        })
+        setGetBookById('')
     }
 
     /** This function will deleting the the getBookId modal */
@@ -46,7 +76,7 @@ export const Cards = ({ books }) => {
     }
     
     return( 
-       <div class="h-screen dark:text-gray-400">
+       <div class="h-screen dark:text-gray-400 pb-6 overflow-auto">
             <div class="cards-container">
                 { books.map(book => (
                     <div class="cards" key={book.id}>
@@ -60,11 +90,11 @@ export const Cards = ({ books }) => {
                                 <div class="flex mt-4">
                                     <div class="flex" onClick={() => getBook(book.id)}>
                                         <img src={loveIcon} alt="likes_icon"/>
-                                        <span class="text-gray-400 ml-1 -mt-1">0</span>
+                                        <span class="text-gray-400 ml-1 -mt-1">{likes}</span>
                                     </div>
                                     <div class="flex md:ml-16 ml-6" onClick={updateComment}>
                                         <img src={commentIcon} alt="comment_icon"/>
-                                        <span class="text-gray-400 ml-1 -mt-1">24</span>
+                                        <span class="text-gray-400 ml-1 -mt-1">0</span>
                                     </div>
                                 </div>
                             </div>

@@ -8,15 +8,15 @@
 /* Below are styling coming from cards.js file */
 
 .cards-container{
-    @apply flex flex-wrap md:ml-64 -ml-3 md:px-6 md:p-0 pl-4 md:mt-36;
+    @apply flex flex-wrap md:ml-64 -ml-3 md:px-6 md:p-0 pl-4 mt-36 pb-6;
 }
 
 .cards{
-    @apply md:w-52 md:h-80 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl md:mt-4 md:ml-4 ml-2 mt-40 rounded-lg cursor-pointer;
+    @apply md:w-52 md:h-80 h-60 w-40 bg-white dark:bg-gray-700 shadow-xl mt-4 md:ml-4 ml-3 rounded-lg cursor-pointer;
 }
 
 .cards-img{
-    @apply w-full md:h-44 h-36 bg-gray-100 dark:bg-gray-700 rounded-lg bg-no-repeat bg-center bg-cover p-3;
+    @apply w-full md:h-44 h-36 bg-gray-100 dark:bg-gray-700 rounded-lg bg-no-repeat bg-center bg-cover;
 }
 
 .input-box{

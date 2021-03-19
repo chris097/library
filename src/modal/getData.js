@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import loveIcon from "../icons/love-icon.svg";
 
 export const GetBookById = ({
+    id,
     author, 
     title, 
     bookUrl, 
     description,
     isPublished,
     imageUrl,
-    removeBookId
+    removeBookId,
+    deleteData,
+    updateData,
+    updateLike
 }) => {
+    
+    const [ likes, setLikes ] = useState(0);
 
-    const [ likes, setLikes ] = useState(0)
-
-    const updateLike = () => {
+    const clickedLike = () => {
         // console.log('something was clicked ...')
         setLikes( !likes ? likes +1 : likes -1 )
     }
@@ -23,7 +27,7 @@ export const GetBookById = ({
         <>
             <div className="fixed w-screen h-screen bg-gray-900 left-0 top-0 opacity-40 transition ease-in-out delay-1000 z-40"></div>
             <div class="object-center self-center justify-center flex font-rubik px-8">
-                <div class="bg-white shadow-md md:w-3/6 w-full h-auto z-50 object-center fixed top-4 dark:bg-gray-900 rounded-lg px-4 py-3">
+                <div class="bg-white shadow-md md:w-3/6 w-full h-auto z-50 object-center fixed top-4 dark:bg-gray-900 rounded-lg px-4 py-3 mx-4 cursor-pointer">
                     <div class="flex justify-between">
                         <div class="font-lobster text-xl bold">{title}</div>
                         <div onClick={removeBookId}><svg className="w-5 mr-3 text-gray-500 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,12 +45,12 @@ export const GetBookById = ({
                             </div>
                         </div>
                         <div class="md:ml-6 ml-4">
-                            <div class="md:w-96 w-full h-64 overflow-auto">{description}</div>
+                            <div class="md:w-96 w-48 break-all h-64 overflow-auto">{description}</div>
                             <div class="flex justify-between mt-5 md:mx-4">
-                                <div onClick={updateLike} class="flex z-50"><img src={loveIcon} alt=""/> <span class="text-gray-500 -mt-1 ml-1 text-xs">{likes}</span></div>
-                                <div class="flex mr-8">
-                                    <div><img class="md:mr-8 mr-3" src={loveIcon} alt="edit_icon"/></div>
-                                    <div><img src={loveIcon} alt="delete_icon"/></div>
+                                <div onClick={updateLike} class="flex z-50 relative hover:bg-red-400"><img onClick={clickedLike} src={loveIcon} alt=""/> <span class="text-gray-500 -mt-1 ml-1 text-xs">{likes}</span></div>
+                                <div class="flex md:mr-4 ml-10 relative">
+                                    <div onClick={() => updateData(id)} class="hover:bg-gray-400 mr-4">edit</div>
+                                    <div onClick={() => deleteData(id)} class="hover:bg-gray-400">delete</div>
                                 </div>
                             </div>
                         </div>

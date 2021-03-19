@@ -5,6 +5,6 @@
 
 export const NotFound = () => {
     return(
-        <div>No Books found ...</div>
+        <div className="text-center -mt-72 font-bold h-screen dark:text-gray-500">No data found.</div>
     )
 }

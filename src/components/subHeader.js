@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import filterIcon from "../icons/filter-icon.svg";
 import useDarkMode from '../hooks/useDarkMode'
 import { DarkModeMobile } from "../modal/optionMobile";
+import axios from "axios";
+import { Url } from "../routes/localhost";
 
 
-export const SubHeader = ({getSidebarMobile}) => {
+export const SubHeader = ({getSidebarMobile, length}) => {
 
     const [colortheme, setColorTheme] = useDarkMode()
     const [ darkModeMobile, setDarkMoodeMobile ] = useState(false);
-    const [ show, setShow ] = useState(true)
+    const [ show, setShow ] = useState(true);
+    // const [ length, setLength ] = useState('')
 
     //Display dark mode
     const displayDarkMode = () => {
@@ -20,6 +23,12 @@ export const SubHeader = ({getSidebarMobile}) => {
         setDarkMoodeMobile(!darkModeMobile)
         setShow(!show)
     }
+
+    // axios.get(Url)
+    // .then(res => {
+    //     let book = res.data
+    //     setLength(book.length)
+    // })
    
     return(
         <div class="dark:bg-gray-800 dark:text-gray-400 flex justify-between font-rubik bg-gray-50 md:px-10 p-2 cursor-pointer w-full h-14 fixed left-0 z-30 mt-20">
@@ -39,7 +48,7 @@ export const SubHeader = ({getSidebarMobile}) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </div>
-                <div class="md:mt-2 mt-1.5 absolute md:relative md:left-0 left-40 dark:text-gray-400">Showing <span class="font-bold">2</span> Result(s)</div>
+                <div class="md:mt-2 mt-1.5 absolute md:relative md:left-0 left-40 dark:text-gray-400">Showing <span class="font-bold">{length}</span> Result(s)</div>
             </div>
                 <div class="flex">
                     <div class="dark:bg-gray-700 flex bg-white w-28 mr-10 rounded-full px-2 h-9 md:visible invisible">
