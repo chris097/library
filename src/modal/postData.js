@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios"
-import { Url } from '../routes/localhost';
+import { prodUrl } from '../routes/prod';
 
 export const PostData = ({ removePostData }) => {
     const [ titleReminder, setTitleReminder ] = useState('');
@@ -27,7 +27,7 @@ export const PostData = ({ removePostData }) => {
         }else if(postData.description.length < 50 || postData.description.length > 300){
             setDescReminder(<div className="absolute right-7 mt-20.5 text-red-500 text-xs">description must be greater than 50 and less than 300</div>)
         }else{
-            axios.post(Url, postData)
+            axios.post(prodUrl, postData)
             .then(res => {
                 const updateDate = res.data;
                 window.location.reload(false)
@@ -56,7 +56,7 @@ export const PostData = ({ removePostData }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg></div>
                         </div>
-                        <form class="px-7 font-rubik">
+                        <form method="" class="px-7 font-rubik" onSubmit={onSubmitHandler}>
                             <div class="mt-5">
                                 { titleReminder }
                                 <label class="block" htmlFor="title">Title</label>
@@ -85,7 +85,7 @@ export const PostData = ({ removePostData }) => {
                                 <label class="block" htmlFor="description">Description</label>
                                 <textarea onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.description} id="description" class="w-full border dark:bg-gray-600 border-gray-200 px-1 h-16 outline-none placeholder-gray-200" placeholder="Write a text"></textarea>
                             </div>
-                            <button class="w-full dark:bg-gray-600 bg-primaryColor mb-2 mt-4 rounded-sm p-2 text-white hover:bg-blue-700 transition-all delay-200 ease-in-out" onClick={onSubmitHandler}>Add </button>
+                            <button class="w-full dark:bg-gray-600 bg-primaryColor mb-2 mt-4 rounded-sm p-2 text-white hover:bg-blue-700 transition-all delay-200 ease-in-out" type='submit'>Add </button>
                         </form>
                     </div>
                 </div>          
