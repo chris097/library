@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import filterIcon from "../icons/filter-icon.svg";
 import useDarkMode from '../hooks/useDarkMode'
 import { DarkModeMobile } from "../modal/optionMobile";
-import axios from "axios";
-import { Url } from "../routes/localhost";
 
 
 export const SubHeader = ({getSidebarMobile, length}) => {
