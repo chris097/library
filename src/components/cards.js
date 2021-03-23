@@ -17,7 +17,7 @@ export const Cards = ({ books }) => {
     const getBook = (_id) => {
         axios.get(`${prodUrl}/${_id}`)
         .then(res => {
-            let book = res.data
+            let book = res.data.book;
             // console.log(book)
             setLoading(<GetDataLoading />)
 
@@ -28,10 +28,10 @@ export const Cards = ({ books }) => {
                     _id={book._id}
                     author={book.author} 
                     title={book.title}
-                    imageUrl={book.imageUrl}
+                    image={book.image}
                     bookUrl={book.bookUrl}
                     description={book.description}
-                    isPublished={book.isPublished}
+                    published={book.published}
                     removeBookId={removeBookId} 
                     deleteData={deleteData}
                     updateData={updateData}
@@ -81,7 +81,7 @@ export const Cards = ({ books }) => {
                 { books.map(book => (
                     <div class="cards" key={book.id}>
                         <div>
-                            <img class="cards-img" src={book.imageUrl !== "" ? book.imageUrl : loveIcon} alt="book_image" onClick={() => getBook(book._id)}/>
+                            <img class="cards-img" src={book.image !== "" ? book.image : loveIcon} alt="book_image" onClick={() => getBook(book._id)}/>
                             <div class="md:ml-3 ml-1.5 mt-2 md:mt-4 font-rubik">
                                 <div onClick={() => getBook(book._id)}>
                                     <h3 class="font-bold md:text-lg text-sm">{book.title}</h3>

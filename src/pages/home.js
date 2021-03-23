@@ -23,6 +23,7 @@ export const Home = () => {
         axios.get(prodUrl)
         .then(res => {
             const books = res.data.books;
+            console.log(books)
             setLenght(books.length)
             setCard(<Cards books={ books } />)
 

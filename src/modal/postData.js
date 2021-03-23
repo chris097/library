@@ -11,7 +11,7 @@ export const PostData = ({ removePostData }) => {
         title: [],
         author: [],
         bookUrl: [],
-        isPublished: [],
+        published: [],
         imageUrl: "",
         description: []
     })
@@ -22,7 +22,7 @@ export const PostData = ({ removePostData }) => {
             setTitleReminder(<div className="absolute right-7 mt-14 text-red-500 text-xs">title must be greater than 5 and less than 20</div>)
         }else if(postData.author.length < 5 || postData.author.length > 20){
             setAuthorReminder(<div className="absolute right-7 mt-14 text-red-500 text-xs">author must be greater than 5 and less than 20</div>)
-        }else if(postData.isPublished.length !== 4){
+        }else if(postData.published.length !== 4){
             setIspublishReminder(<div className="absolute right-7 mt-14 text-red-500 text-xs">isPublish must be equal to 4</div>)
         }else if(postData.description.length < 50 || postData.description.length > 300){
             setDescReminder(<div className="absolute right-7 mt-20.5 text-red-500 text-xs">description must be greater than 50 and less than 300</div>)
@@ -74,11 +74,11 @@ export const PostData = ({ removePostData }) => {
                             <div class="mt-2">
                                 { ispublishReminder }
                                 <label class="block" htmlFor="publishName">Published</label>
-                                <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.isPublished} id="isPublished" class="input-box" type="text" placeholder="Publisher Name"/>
+                                <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.published} id="published" class="input-box" type="text" placeholder="Publisher Name"/>
                             </div>
                             <div class="mt-2">
                                 <label class="block" htmlFor="imageUrl">Image Url</label>
-                                <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.imageUrl} id="imageUrl" class="input-box" type="text" placeholder="Optional"/>
+                                <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.image} id="image" class="input-box" type="text" placeholder="Optional"/>
                             </div>
                             <div class="mt-2">
                                 { descReminder }
