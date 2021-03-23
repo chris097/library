@@ -13,7 +13,7 @@ export default function App() {
     }, 2500);
 
     setTimeout(() => {
-        setLoadPage(<div class="dark:bg-gray-900 transition duration-500 z-50 overflow-hidden"><Home /></div>)
+        setLoadPage(<div class="dark:bg-gray-900 transition duration-500 relative"><Home /></div>)
     }, 3000);
 
 

@@ -4,12 +4,12 @@ import delIcon from '../icons/del-icon.png';
 import editIcon from '../icons/edit-icon.png';
 
 export const GetBookById = ({
-    id,
+    _id,
     author, 
     title, 
     bookUrl, 
     description,
-    isPublished,
+    Published,
     imageUrl,
     removeBookId,
     deleteData,
@@ -41,9 +41,9 @@ export const GetBookById = ({
                             <img class="bg-gray-200 md:w-44 w-32 h-52 rounded" src={imageUrl !== "" ? imageUrl : loveIcon} alt="book_image"/>
                             <div class="mt-5 overflow-x-auto md:w-full md:h-auto fixed w-32">
                                 <div class="whitespace-nowrap">Author: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{author}</span></div>                            
-                                <div class="whitespace-nowrap mt-2">Published: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{isPublished}</span></div>                            
+                                <div class="whitespace-nowrap mt-2">Published: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{Published}</span></div>                            
                                 <div class="whitespace-nowrap mt-2">Publisher: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{author}</span></div>                            
-                                <div class="whitespace-nowrap mt-2">BookUrl: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{bookUrl}</span></div>                            
+                                <div class="whitespace-nowrap mt-2">BookUrl: <span class="bg-blue-400 text-white p-1 text-sm rounded-full"><a href={bookUrl}>Read more about {title}</a></span></div>                            
                             </div>
                         </div>
                         <div class="md:ml-6 ml-4">
@@ -51,8 +51,8 @@ export const GetBookById = ({
                             <div class="flex justify-between mt-5 md:mx-4">
                                 <div onClick={updateLike} class="flex z-50 relative"><img class="hover:bg-red-400 rounded-full" onClick={clickedLike} src={loveIcon} alt=""/> <span class="text-gray-500 -mt-1 ml-1 text-xs">{likes}</span></div>
                                 <div class="flex md:mr-4 ml-10 relative">
-                                    <div onClick={() => updateData(id)} class="hover:bg-gray-400 mr-7  w-6 h-6"><img src={editIcon} alt="edit_icon"/></div>
-                                    <div onClick={() => deleteData(id)} class="hover:bg-red-400 w-7 h-7 rounded-full p-1"><img src={delIcon} alt="delete_icon"/></div>
+                                    <div onClick={() => updateData(_id)} class="hover:bg-gray-400 mr-7  w-6 h-6"><img src={editIcon} alt="edit_icon"/></div>
+                                    <div onClick={() => deleteData(_id)} class="hover:bg-red-400 w-7 h-7 rounded-full p-1"><img src={delIcon} alt="delete_icon"/></div>
                                 </div>
                             </div>
                         </div>
