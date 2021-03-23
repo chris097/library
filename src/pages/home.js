@@ -22,7 +22,7 @@ export const Home = () => {
     useEffect(() => {
         axios.get(prodUrl)
         .then(res => {
-            const books = res.data;
+            const books = res.data.books;
             setLenght(books.length)
             setCard(<Cards books={ books } />)
 

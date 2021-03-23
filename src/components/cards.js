@@ -57,7 +57,7 @@ export const Cards = ({ books }) => {
     const deleteData = (_id) => {
         axios.delete(`${prodUrl}/${_id}`)
         .then(res => {
-            const deteleData = res.data;
+            const deteleData = res.data.book;
             window.location.reload(false)
             console.log(deteleData)
         })

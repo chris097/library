@@ -29,7 +29,7 @@ export const PostData = ({ removePostData }) => {
         }else{
             axios.post(prodUrl, postData)
             .then(res => {
-                const updateDate = res.data;
+                const updateDate = res.data.books;
                 window.location.reload(false)
                 console.log(updateDate)
                 setPostData(postData)
