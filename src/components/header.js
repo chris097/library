@@ -1,7 +1,7 @@
 import { React } from "react";
 
 
-export const Header = ({displayData}) => {
+export const Header = ({displayData, displaySearchBox}) => {
     return(
         <div class=" dark:bg-gray-900 dark:text-gray-400 bg-white shadow-sm h-20 flex justify-between md:px-10 px-2 py-4 overflow-hidden w-full fixed left-0 z-20">
             <div class="flex flex-1">
@@ -10,7 +10,7 @@ export const Header = ({displayData}) => {
 
                 { /** Search Input */}
 
-                <div class="bg-gray-50 dark:bg-gray-700 md:ml-10 md:w-2/3 w-40 md:h-12 ml-2 flex rounded-full md:px-4">
+                <div onMouseOver={displaySearchBox} class="bg-gray-50 dark:bg-gray-700 md:ml-10 md:w-2/3 w-40 md:h-12 ml-2 flex rounded-full md:px-4">
                     <span><svg class="w-8 ml-2 md:mt-2 mt-2 inline text-gray-200 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg></span>
