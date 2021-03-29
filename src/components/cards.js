@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import loveIcon from "../icons/love-icon.svg";
 import commentIcon from "../icons/comment-icon.svg";
 import axios from "axios";
-import { Url } from "../routes/localhost";
+import {prodUrl} from '../routes/prod'
 import { GetBookById } from "../modal/getData";
 import { GetDataLoading } from "../loading/getData";
 
@@ -15,7 +15,11 @@ export const Cards = ({ books }) => {
     localStorage.getItem(likes)
 
     const getBook = (_id) => {
+<<<<<<< HEAD
         axios.get(`${Url}/${_id}`)
+=======
+        axios.get(`${prodUrl}/${_id}`)
+>>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
         .then(res => {
             let book = res.data.book
             console.log(book._id)
@@ -55,10 +59,17 @@ export const Cards = ({ books }) => {
 
     // This function will be deletng a book permaniently be careful on clicking this function
     const deleteData = (_id) => {
+<<<<<<< HEAD
         window.location.reload(false)
         axios.delete(`${Url}/${_id}`)
         .then(res => {
             const deteleData = res.data.book;
+=======
+        axios.delete(`${prodUrl}/${_id}`)
+        .then(res => {
+            const deteleData = res.data;
+            window.location.reload(false)
+>>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
             console.log(deteleData)
         })
         setGetBookById('')
@@ -76,7 +87,7 @@ export const Cards = ({ books }) => {
     }
     
     return( 
-       <div class="h-screen dark:text-gray-400 pb-6 overflow-auto">
+       <div class="h-screen w-full dark:bg-gray-900 dark:text-gray-400 pb-6 overflow-auto">
             <div class="cards-container">
                 { books.map(book => (
                     <div class="cards" key={book._id}>

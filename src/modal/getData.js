@@ -43,12 +43,16 @@ export const GetBookById = ({
                                 <div class="whitespace-nowrap">Author: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{author}</span></div>                            
                                 <div class="whitespace-nowrap mt-2">Published: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{Published}</span></div>                            
                                 <div class="whitespace-nowrap mt-2">Publisher: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{author}</span></div>                            
+<<<<<<< HEAD
                                 <div class="whitespace-nowrap mt-2">BookUrl: <span class="bg-blue-400 text-white p-1 text-sm rounded-full"><a href={bookUrl}>Read more about {title}</a></span></div>                            
+=======
+                                <div class="whitespace-nowrap mt-2">BookUrl: <span class="bg-blue-400 text-white p-1 text-sm rounded-full hover:text-red-400"><a href={bookUrl}>Goto {title} Link</a></span></div>                            
+>>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
                             </div>
                         </div>
                         <div class="md:ml-6 ml-4">
                             <div class="md:w-96 w-48 break-all h-64 overflow-auto">{description}</div>
-                            <div class="flex justify-between mt-5 md:mx-4">
+                            <div class="flex justify-between mt-3 md:mx-4">
                                 <div onClick={updateLike} class="flex z-50 relative"><img class="hover:bg-red-400 rounded-full" onClick={clickedLike} src={loveIcon} alt=""/> <span class="text-gray-500 -mt-1 ml-1 text-xs">{likes}</span></div>
                                 <div class="flex md:mr-4 ml-10 relative">
                                     <div onClick={() => updateData(_id)} class="hover:bg-gray-400 mr-7  w-6 h-6"><img src={editIcon} alt="edit_icon"/></div>
