@@ -9,8 +9,8 @@ export const GetBookById = ({
     title, 
     bookUrl, 
     description,
-    Published,
-    imageUrl,
+    published,
+    image,
     removeBookId,
     deleteData,
     updateData,
@@ -38,16 +38,12 @@ export const GetBookById = ({
                     </div>
                     <div class="flex mt-3">
                         <div>
-                            <img class="bg-gray-200 md:w-44 w-32 h-52 rounded" src={imageUrl !== "" ? imageUrl : loveIcon} alt="book_image"/>
+                            <img class="bg-gray-200 md:w-44 w-32 h-52 rounded" src={image !== "" ? image : loveIcon} alt="book_image"/>
                             <div class="mt-5 overflow-x-auto md:w-full md:h-auto fixed w-32">
                                 <div class="whitespace-nowrap">Author: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{author}</span></div>                            
-                                <div class="whitespace-nowrap mt-2">Published: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{Published}</span></div>                            
+                                <div class="whitespace-nowrap mt-2">Published: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{published}</span></div>                            
                                 <div class="whitespace-nowrap mt-2">Publisher: <span class="bg-blue-400 text-white p-1 text-sm rounded-full">{author}</span></div>                            
-<<<<<<< HEAD
-                                <div class="whitespace-nowrap mt-2">BookUrl: <span class="bg-blue-400 text-white p-1 text-sm rounded-full"><a href={bookUrl}>Read more about {title}</a></span></div>                            
-=======
                                 <div class="whitespace-nowrap mt-2">BookUrl: <span class="bg-blue-400 text-white p-1 text-sm rounded-full hover:text-red-400"><a href={bookUrl}>Goto {title} Link</a></span></div>                            
->>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
                             </div>
                         </div>
                         <div class="md:ml-6 ml-4">

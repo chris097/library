@@ -12,4 +12,5 @@
 
 */}
 
-export const prodUrl = "https://lib-shelter.herokuapp.com/api/items";
+
+export const prodUrl = "https://book-cabinet.herokuapp.com/api/v1/books";
