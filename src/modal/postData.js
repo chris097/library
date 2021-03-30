@@ -56,42 +56,14 @@ export const PostData = ({ removePostData }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg></div>
                         </div>
-<<<<<<< HEAD
-                        <form method='' onSubmit={onSubmitHandler} class="px-7 font-rubik">
-=======
+
                         <form method="" class="px-7 font-rubik" onSubmit={onSubmitHandler}>
->>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
                             <div class="mt-5">
                                 { titleReminder }
                                 <label class="block" htmlFor="title">Title</label>
                                 <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.title} class="input-box" type="text" id="title" placeholder="Book title" required/>
                             </div>
-<<<<<<< HEAD
-                        <div class="mt-2">
-                            { authorReminder }
-                            <label class="block" htmlFor="author">Author</label>
-                            <input  onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.author} class="input-box" type="text" id="author" placeholder="Author name" required/>
-                        </div>
-                        <div class="mt-2">
-                            <label class="block" htmlFor="BookUrl">Book Url</label>
-                            <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.bookUrl} id="bookUrl" class="input-box" type="text" placeholder="https://www.mybook.com" required/>
-                        </div>
-                        <div class="mt-2">
-                            { ispublishReminder }
-                            <label class="block" htmlFor="publishName">Published</label>
-                            <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.Publisher} id="isPublisher" class="input-box" type="text" placeholder="Publisher Name"/>
-                        </div>
-                        <div class="mt-2">
-                            <label class="block" htmlFor="imageUrl">Image Url</label>
-                            <input onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.imageUrl} id="imageUrl" class="input-box" type="text" placeholder="Optional"/>
-                        </div>
-                        <div class="mt-2">
-                            { descReminder }
-                            <label class="block" htmlFor="description">Description</label>
-                            <textarea onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.description} id="description" class="w-full border dark:bg-gray-600 border-gray-200 px-1 h-16 outline-none placeholder-gray-200" placeholder="Write a text"></textarea>
-                        </div>
-                            <button class="w-full dark:bg-gray-600 bg-primaryColor mb-2 mt-4 rounded-sm p-2 text-white hover:bg-blue-700 transition-all delay-200 ease-in-out" type="submit">Add </button>
-=======
+
                             <div class="mt-2">
                                 { authorReminder }
                                 <label class="block" htmlFor="author">Author</label>
@@ -116,7 +88,6 @@ export const PostData = ({ removePostData }) => {
                                 <textarea onBlur={e => onChangeHandler(e)} onChange={e => onChangeHandler(e)} value={postData.description} id="description" class="w-full border dark:bg-gray-600 border-gray-200 px-1 h-16 outline-none placeholder-gray-200" placeholder="Write a text"></textarea>
                             </div>
                             <button class="w-full dark:bg-gray-600 bg-primaryColor mb-2 mt-4 rounded-sm p-2 text-white hover:bg-blue-700 transition-all delay-200 ease-in-out" type='submit'>Add </button>
->>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
                         </form>
                     </div>
                 </div>          

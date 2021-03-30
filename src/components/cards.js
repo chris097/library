@@ -15,11 +15,7 @@ export const Cards = ({ books }) => {
     localStorage.getItem(likes)
 
     const getBook = (_id) => {
-<<<<<<< HEAD
-        axios.get(`${Url}/${_id}`)
-=======
         axios.get(`${prodUrl}/${_id}`)
->>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
         .then(res => {
             let book = res.data.book
             console.log(book._id)
@@ -59,17 +55,10 @@ export const Cards = ({ books }) => {
 
     // This function will be deletng a book permaniently be careful on clicking this function
     const deleteData = (_id) => {
-<<<<<<< HEAD
-        window.location.reload(false)
-        axios.delete(`${Url}/${_id}`)
-        .then(res => {
-            const deteleData = res.data.book;
-=======
         axios.delete(`${prodUrl}/${_id}`)
         .then(res => {
             const deteleData = res.data;
             window.location.reload(false)
->>>>>>> 2d83900ea5d0281ce1b595ac5bc4bef870897d49
             console.log(deteleData)
         })
         setGetBookById('')
